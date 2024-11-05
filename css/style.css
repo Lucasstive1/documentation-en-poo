@@ -1,0 +1,44 @@
+.highlight{
+    background-color: green;
+    color: white;
+}
+
+
+/* css pour la gestion de l'image */
+.circle{
+    width: 250px;
+    height: 250px;
+    object-fit: cover; 
+}
+
+.image-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+Body {
+    Background-color: #f8f9fa;
+}
+.code-editor {
+    Background-color: #2d2d2d;
+    Color: #f8f8f2;
+    Padding: 15px;
+    Border-radius: 5px;
+    Font-family: ‘Courier New’, Courier, monospace;
+    Overflow: auto;
+    White-space: pre;
+}
+.code-editor .line-numbers {
+    Color: #75715e;
+    Display: inline-block;
+    Width: 30px;
+    Text-align: right;
+    Padding-right: 10px;
+}
+.btn-copy {
+    Position: absolute;
+    Right: 15px;
+    Top: 15px;
+}

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation en POO</title>
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="navbar navbar-expand-lg navbar-light bg-info">
+    <div class="container-fluid">
+        <h1 class="navbar-brand d-lg-none mx-2 text-light">Doc POO</h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="d-flex w-100 align-items-center">
+                
+                <!-- Titre Doc POO à droite -->
+                <div class="col-lg-4 d-flex justify-content-start align-items-center">
+                    <h2 class="text-light">Doc POO</h2>
+                </div>
+
+                <!-- Barre de recherche au centre -->
+                <div class="col-lg-4 d-flex justify-content-center">
+                    <div class="input-group">
+                        <input type="text" class="form-control " id="searchInput"  placeholder="Recherche..." aria-label="Recherche">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary" id="searchButton">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bouton Suggestions -->
+                <div class="col-lg-4 d-flex justify-content-end align-items-center">
+                    <button class="btn suggestions-button btn-primary text-light" onclick="toggleSuggestion()">
+                        <i class="fas fa-lightbulb text-warning mx-2"></i> Suggestions
+                    </button>
+                </div>
+                
+
+                
+            </div>
+        </div>
+    </div>
+</header>
+<!-- main -->
+<main class="container my-0">
+    <!-- insertion de l'image -->
+    <div class="row image-content">
+        <div class="col-lg-6 col-12 d-flex justify-content-center mb-4 mb-lg-0">
+            <img src="../images/poo.jpg" class="rounded circle">
+        </div>
+        <div class="col-lg-6 col-12 d-flex justify-content-center mb-4 mb-lg-0">
+            <img src="../images/LOGO FORM.png" class="rounded-circle circle">
+        </div>
+    </div>
+
+    <!-- concept de la poo -->
+     <div class="text-center mb-4">
+        <h1 class="display-4 text-primary"> 
+            Qu'est ce que le POO?
+        </h1>
+     </div>
+
+     <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="h4 text-info">Définition</h2>
+            <p>La <strong class="text-danger">Programmation Orientée Objet (POO)</strong> est un paradigme de programmation qui repose sur le concept <strong>d'objets</strong> .
+                Les objets sont des instances de classes qui encapsulent des données et des comportements. En d'autres termes, la POO permet de regrouper des <strong>attributs</strong><i>(propriétés</i>) et  des  <strong>méthodes</strong><i>(comportements)</i> 
+                 au sein d'une même structure, facilitant ainsi la modélisation de problèmes complexes.</p>
+            <p>La POO se base sur quatre principes fondamentaux:</p>
+            <ul>
+                <li><strong>Encapsulation</strong>: Protection des données en restreignant l'accès direct aux attributs d'un objet.</li>
+                <li><strong>Héritage</strong>: Méanisme permettant de créer de nouvelles classes basées sur des classes existantes, réutilisant ainsi le code.</li>
+                <li><strong>Polymorphisme</strong>: Capacité à traiter des objets de différentes classes comme s'ils étaient d'une même classe.</li>
+                <li><strong>Abstraction</strong>: Simplification des complexités en ne montrant que les détails nécessaires à l'utilisateur.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card mb-4  bg-body-secondary">
+        <div class="card-body">
+            <h2 class="h4 text-info">Historique</h2>
+            <p>La POO a émergé dans les années 1960 et 1970, avec des langages comme Simula, qui est souvent considéré comme le premier langage orienté objet. Simula a introduit les concepts d'objets et de classes. Dans les années 1980, la POO a gagné en popularité grâce à l'avènement de langages tels que Smalltalk et C++. Ces langages ont permis aux développeurs de créer des applications plus modulaires et réutilisables.</p>
+            <p>Au fil des ans, la POO a évolué et a été intégrée dans de nombreux langages modernes comme Java, Python, C#, et Ruby, rendant ce paradigme incontournable dans le développement logiciel contemporain.</p>
+        </div>
+    </div>
+
+    <div class="card mb-4 ">
+        <div class="card-body">
+            <h2 class="h4 text-info">Objectifs de la POO</h2>
+            <p>Les principaux objectifs de la Programmation Orientée Objet sont':</p>
+            <ul>
+                <li><strong>Modularité</strong>: Permettre une meilleure organisation du code en le divisant en modules indépendants.</li>
+                <li><strong>Réutilisabilité</strong>: Favoriser la réutilisation du code grâce à l'héritage et aux bibliothèques d'objets.</li>
+                <li><strong>Facilité de maintenance</strong>: Rendre le code plus facile à comprendre et à maintenir grâce à une structure claire.</li>
+                <li><strong>Adaptabilité</strong>: Permettre aux systèmes de s'adapter facilement aux changements en ajoutant ou en modifiant des objets sans affecter l'ensemble du système.</li>
+            </ul>
+            <p>En somme, la POO vise à rendre le développement logiciel plus efficace et moins sujet aux erreurs, tout en facilitant la collaboration entre les développeurs.</p>
+        </div>
+    </div>
+
+
+    <div class="text-center mb-4">
+        <h1 class="display-4 text-primary">Principes Fondamentaux de la POO</h1>
+    </div>
+
+    <!-- <"—Section Classe  -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="h4 text-info">1. Notion de Classe</h2>
+            <p>Une <strong>classe</strong> est un modèle ou un plan qui définit les propriétés (attributs) et les comportements (méthodes) que les objets créés à partir de cette classe auront. En d'autres termes, une classe est une abstraction qui encapsule des données et des fonctions qui opèrent sur ces données.</p>
+            <p>Les classes permettent aux développeurs de créer des objets qui partagent des caractéristiques communes, facilitant ainsi l'organisation et la gestion du code.</p>
+
+            <h3 class="h5 text-success">Exemple de Classe</h3>
+            <div class="position-relative mb-3">
+                <button class="btn btn-secondary btn-copy" onclick="copyCode('python-clas')">Copier le Code</button>
+                <pre class="code-editor" id="python-class">
+Class Animal"
+    Def __init__(self, nom)"
+        Self.nom = nom
+
+    Def parler(self)"
+        Return f"{self.nom} fait du bruit""
+                </pre>
+            </div>
+
+            <h3 class="h5 text-success">Notion d'Objet</h3>
+            <p>Un <strong>objet</strong> est une instance d'une classe. Lorsqu'une classe est définie, elle ne consomme pas de mémoire. C'est seulement lorsque vous créez un objet à partir de cette classe que la mémoire est allouée pour stocker ses attributs.</p>
+            <p>Par exemple, si «"nimal" est une classe, alors «"hien" et «"hat" peuvent être des objets de cette classe.</p>
+        </div>
+    </div>
+
+    <!-- <"—Section Encapsulation  -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="h4 text-info">2. Encapsulation</h2>
+            <p>L'\<strong>encapsulation</strong> est un principe qui consiste à restreindre l'accès direct aux attributs d'un objet et à ne permettre leur modification qu'à travers des méthodes spécifiques.</p>
+            <p>Ce principe offre plusieurs avantages"</p>
+            <ul>
+                <li><strong>Sécurité"</strong> Les données sensibles peuvent être protégées contre les modifications non autorisées.</li>
+                <li><strong>Facilité de maintenance"</strong> Les changements dans les méthodes internes n'affectent pas le code extérieur tant que l'interface reste inchangée.</li>
+                <li><strong>Clarté"</strong> L'utilisation de méthodes pour interagir avec les données rend le code plus lisible.</li>
+            </ul>
+
+            <h3 class="h5 text-success">Exemple d'Encapsulation</h3>
+
+            <div class="position-relative mb-3">
+                <button class="btn btn-secondary btn-copy" onclick="copyCode('python-encapsulation')">Copier le Code</button>
+                <pre class="code-editor" id="python-encapsulation">
+Class CompteBancaire"
+    Def __init__(self, solde=0)"
+        Self.__solde = solde  # Attribut privé
+
+    Def deposer(self, montant)"
+        Self.__solde += montant
+
+    Def retirer(self, montant)"
+        If montant <= self.__solde"
+            Self.__solde -= montant
+        Else"
+            Print(«"onds insuffisants"")
+
+    Def afficher_solde(self)"
+        Return f"Solde" {self.__solde}"
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- <"—Section Héritage  -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="h4 text-info">3. Héritage</h2>
+            <p>L'<strong>héritage</strong> est un mécanisme qui permet de créer une nouvelle classe à partir d'une classe existante. La nouvelle classe (classe dérivée) hérite des attributs et méthodes de la classe de base.</p>
+            
+            <h3 class="h5 text-success">Types d'Héritage</h3>
+            <ul>
+                <li><strong>Héritage simple"</strong> Une classe dérivée hérite d'une seule classe de base.</li>
+                <li><strong>Héritage multiple"</strong> Une classe dérivée hérite de plusieurs classes de base.</li>
+                <li><strong>Héritage hiérarchique"</strong> Plusieurs classes dérivées héritent d'une même classe de base.</li>
+                <li><strong>Héritage multiniveau"</strong> Une classe dérivée hérite d'une autre classe dérivée.</li>
+            </ul>
+
+            <h3 class="h5 text-success">Exemple d'Héritage</h3>
+            <div class="position-relative mb-3">
+                <button class="btn btn-secondary btn-copy" onclick="copyCode('python-inheritance')">Copier le Code</button>
+                <pre class="code-editor" id="python-inheritance">
+Class Animal"
+    Def parler(self)"
+        Return «"e fais du bruit""
+
+Class Chien(Animal)"  # Héritage simple
+    Def parler(self)"
+        Return «"oof""
+
+Class Chat(Animal)"  # Héritage simple
+    Def parler(self)"
+        Return «"eow""
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- <"—Section Polymorphisme  -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="h4 text-info">4. Polymorphisme</h2>
+            <p>Le <strong>polymorphisme</strong> permet à des objets de différentes classes d'être traités comme des objets d'une même classe. Cela signifie que la même méthode peut fonctionner différemment selon l'objet qui l'appelle.</p>
+
+            <h3 class="h5 text-success">Types de Polymorphisme</h3>
+            <ul>
+                <li><strong>Polymorphisme par surcharge"</strong> Plusieurs méthodes peuvent avoir le même nom mais des signatures différentes.</li>
+                <li><strong>Polymorphisme par substitution"</strong> Une méthode dans une classe dérivée remplace une méthode dans la classe de base.</li>
+            </ul>
+
+            <h3 class="h5 text-success">Exemple de Polymorphisme</h3>
+            <div class="position-relative mb-3">
+                <button class="btn btn-secondary btn-copy" onclick="copyCode('python-polymorphism')">Copier le Code</button>
+                <pre class="code-editor" id="python-polymorphism">
+Def faire_parler(animal)"
+    Print(animal.parler())
+
+Chien = Chien()
+Chat = Chat()
+
+Faire_parler(chien)  # Affiche «"oof""
+Faire_parler(chat)   # Affiche «"eow""
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- <"—Section Abstraction  -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="h4 text-info">5. Abstraction</h2>
+            <p>L'<strong>abstraction</strong> est le processus de simplification des complexités en ne montrant que les détails nécessaires à l'utilisateur. Cela permet de se concentrer sur l'interaction avec l'objet sans se soucier de la mise en œuvre interne.</p>
+
+            <h3 class="h5 text-success">Interfaces et Classes Abstraites</h3>
+            <p>Une interface définit un ensemble de méthodes que les classes dérivées doivent implémenter. Une classe abstraite peut contenir des méthodes abstraites (sans implémentation) et des méthodes concrètes (avec implémentation).</p>
+
+            <h3 class="h5 text-success">Exemple d'Abstraction</h3>
+            <div class="position-relative mb-3">
+                <button class="btn btn-secondary btn-copy" onclick="copyCode('python-abstraction')">Copier le Code</button>
+                <pre class="code-editor" id="python-abstraction">
+From abc import ABC, abstractmethod
+
+Class Animal(ABC)"  # Classe abstraite
+    @abstractmethod
+    Def parler(self)"
+        Pass
+
+Class Chien(Animal)"
+    Def parler(self)"
+        Return "oof"
+
+Class Chat(Animal)"
+    Def parler(self)"
+        Return «"eow""
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- <"—Section Composition vs Héritage  -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="h4 text-info">6. Composition vs Héritage</h2>
+            <p><strong>Composition</strong> consiste à construire des objets complexes à partir d'objets plus simples, tandis que l'<strong>héritage</strong> permet de créer une nouvelle classe basée sur une classe existante.</p>
+
+            <h3 class="h5 text-success">Différences et Utilisation</h3>
+            <ul>
+                <li><strong>Objectif"</strong> L'héritage favorise la réutilisation du code, tandis que la composition favorise la flexibilité.</li>
+                <li><strong>Quand utiliser"</strong> Utilisez l'héritage lorsque vous avez une relation « est un », et la composition lorsque vous avez une relation « a un ».</li>
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- <"—Section Design Patterns  -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="h4 text-info">7. Design Patterns</h2>
+            <p>Les design patterns sont des solutions réutilisables à des problèmes courants dans le développement logiciel. Ils offrent des modèles éprouvés qui aident à résoudre des problèmes spécifiques tout en améliorant la lisibilité et la maintenance du code.</p>
+
+            <h3 class="h5 text-success">Introduction aux Design Patterns Courants</h3>
+            <ul>
+                <li><strong>Singleton"</strong> Assure qu'une classe n'a qu'une seule instance et fournit un point d'accès global à celle-ci.</li>
+                <li><strong>Factory Method"</strong> Définit une interface pour créer un objet, mais laisse les sous-classes décider quelle classe instancier.</li>
+                <li><strong>Observer"</strong> Permet à un objet d'informer d'autres objets lorsqu'il change d'état, facilitant ainsi le suivi des événements.</li>
+                <li><strong>Strategy"</strong> Définit une famille d'algorithmes, encapsule chacun d'eux et les rend interchangeables.</li>
+                <li><strong>Decorator"</strong> Permet d'ajouter dynamiquement des fonctionnalités à un objet en le « décorant » avec des comportements supplémentaires.</li>
+            </ul>
+
+        </div>
+    
+
+
+</main>
+
+
+
+
+
+
+
+
+
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/all.min.js"></script>
+<script src="../js/js.js"></script>
+
+
+<script>
+    $(document).ready(function(){
+        $("#searchButton").click(function(){
+             //recuperation du texte de la barre de recherche
+             var searchText = $("#searchInput").val();
+
+             //effacer les mots du input
+             $("#content").html($("#content").html().replace(/<span> class="highlight">(.*?)</span>g,"$1"));
+
+             if (searchText){
+
+                var regex = new RegExp("(' + searchText + ')", "gi");
+
+                $("#content").html($("#content").html().replace(regex, '<span class="highlight">$1</span> '));
+             }
+        });
+    });
+
+
+    // Fonction pour copier le code
+    // Fonction pour copier le code
+function copyCode(id) {
+    var code = document.getElementById(id).innerText;
+    Navigator.clipboard.writeText(code).then(function() {
+        Alert('Code copié dans le presse-papiers!');
+    }, function(err) {
+        Console.error('Erreur lors de la copie:', err);
+    });
+}
+
+
+</script>
+
+</body>
+</html>
