@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
 </head>
 <body>
 
@@ -58,7 +59,7 @@
             <img src="../images/poo.jpg" class="rounded circle">
         </div>
         <div class="col-lg-6 col-12 d-flex justify-content-center mb-4 mb-lg-0">
-            <img src="../images/LOGO FORM.png" class="rounded-circle circle">
+            <img src="../images/logo.png" class="rounded-circle circle">
         </div>
     </div>
 
@@ -314,29 +315,29 @@ Class Chat(Animal)"
 
 
 
-<script src="../js/jquery.js"></script>
+
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/all.min.js"></script>
+
 <script src="../js/js.js"></script>
 
 
 <script>
     $(document).ready(function(){
         $("#searchButton").click(function(){
-             //recuperation du texte de la barre de recherche
-             var searchText = $("#searchInput").val();
-
-             //effacer les mots du input
-             $("#content").html($("#content").html().replace(/<span> class="highlight">(.*?)</span>g,"$1"));
-
-             if (searchText){
-
-                var regex = new RegExp("(' + searchText + ')", "gi");
-
-                $("#content").html($("#content").html().replace(regex, '<span class="highlight">$1</span> '));
-             }
+            let searchText = $("#searchInput").val();
+            if (searchText) {
+                // Réinitialiser les résultats de recherche
+                $("#content").html($("#content").html().replace(/<span class="highlight">(.*?)<\/span>/gi, "$1"));
+    
+                let regex = new RegExp("(" + searchText + ")", "gi");
+                let content = $("#content").html();
+                let newContent = content.replace(regex, "<span class='highlight'>$1</span>");
+                $("#content").html(newContent);
+            }
         });
     });
+    
 
 
     // Fonction pour copier le code
@@ -352,6 +353,7 @@ function copyCode(id) {
 
 
 </script>
+<script src="../js/jquery.js"></script>
 
 </body>
 </html>

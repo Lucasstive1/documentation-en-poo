@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation en POO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style pour l'éditeur de code avec coloration syntaxique */
+        .code-editor {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            position: relative;
+            line-height: 1.5;
+            font-family: "Courier New", Courier, monospace;
+        }
+        .btn-copy {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        /* Style pour la barre de recherche et le bouton suggestions */
+        .search-bar, .suggestions-button {
+            transition: transform 0.3s ease;
+        }
+        .search-bar {
+            transform: translateX(100%);
+        }
+        .suggestions-button {
+            transform: translateX(100%);
+        }
+        /* Style pour le texte en surbrillance */
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar avec menu burger et barre de recherche -->
+<header class="navbar navbar-expand-lg navbar-light bg-info">
+    <div class="container-fluid">
+        <h1 class="navbar-brand d-lg-none mx-2 text-light">Doc POO</h1>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="d-flex w-100 align-items-center">
+                <div class="col-lg-4 d-flex justify-content-start align-items-center">
+                    <h2 class="text-light">Doc POO</h2>
+                </div>
+                <div class="col-lg-4 d-flex justify-content-center">
+                    <div class="input-group search-bar">
+                        <input type="text" class="form-control" id="searchInput" placeholder="Recherche..." aria-label="Recherche">
+                        <button class="btn btn-secondary" id="searchButton">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex justify-content-end align-items-center">
+                    <button class="btn btn-primary text-light suggestions-button" onclick="toggleSuggestion()">
+                        <i class="fas fa-lightbulb text-warning mx-2"></i> Suggestions
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Contenu principal -->
+<main class="container my-4">
+    <!-- Exemple de POO : Héritage en Python et Java -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="h4 text-info">Exemple : Héritage</h2>
+            <h3 class="h5 text-success">Python</h3>
+            <div class="position-relative mb-3">
+                <button class="btn btn-secondary btn-copy" onclick="copyCode('python-inheritance')">Copier le Code</button>
+                <pre class="code-editor" id="python-inheritance">
+class Animal:
+    def parler(self):
+        return "Je fais du bruit"
+
+class Chien(Animal):  # Héritage simple
+    def parler(self):
+        return "Woof!"
+
+class Chat(Animal):  # Héritage simple
+    def parler(self):
+        return "Meow"
+                </pre>
+            </div>
+            <p>Dans cet exemple, la classe `Chien` et la classe `Chat` héritent de la classe `Animal`. Chacune redéfinit la méthode `parler` pour fournir un comportement spécifique.</p>
+
+            <h3 class="h5 text-success">Java</h3>
+            <div class="position-relative mb-3">
+                <button class="btn btn-secondary btn-copy" onclick="copyCode('java-inheritance')">Copier le Code</button>
+                <pre class="code-editor" id="java-inheritance">
+class Animal {
+    public String parler() {
+        return "Je fais du bruit";
+    }
+}
+
+class Chien extends Animal {  // Héritage simple
+    @Override
+    public String parler() {
+        return "Woof!";
+    }
+}
+
+class Chat extends Animal {  // Héritage simple
+    @Override
+    public String parler() {
+        return "Meow";
+    }
+}
+                </pre>
+            </div>
+            <p>En Java, l'héritage est réalisé avec le mot-clé `extends`. Ici, `Chien` et `Chat` héritent de `Animal` et redéfinissent la méthode `parler` avec leur propre implémentation.</p>
+        </div>
+    </div>
+</main>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Animation de la barre de recherche et du bouton suggestions
+    function toggleSuggestion() {
+        $('.suggestions-button').toggleClass('show').css('transform', $('.suggestions-button').hasClass('show') ? 'translateX(0)' : 'translateX(100%)');
+        $('.search-bar').toggleClass('show').css('transform', $('.search-bar').hasClass('show') ? 'translateX(0)' : 'translateX(100%)');
+    }
+
+    // Copier le code
+    function copyCode(elementId) {
+        var code = document.getElementById(elementId).innerText;
+        navigator.clipboard.writeText(code).then(function() {
+            alert('Code copié!');
+        });
+    }
+
+    // Recherche et mise en évidence
+    $('#searchButton').click(function() {
+        const query = $('#searchInput').val().trim();
+        if (query) {
+            $('main').unmark().mark(query);
+        }
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+</body>
+</html>
